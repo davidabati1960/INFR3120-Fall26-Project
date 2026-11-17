@@ -1,5 +1,91 @@
 <%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
-    
-   
+<main>
+    <div>
+        <h1> Report an Incident </h1>
+        <p>
+            Describe the cybersecurity incident below.All fields sre required.
+        </p>
+        <form id="incidentForm">
+            <div class="mb-3">
+                <label for="title" class="form-label"> Incident Title</label>
+                <input type="text"
+                id ="title"
+                name="title"
+                class="form-control"
+                placeholder="Example:- Suspisious login attempt"
+                required
+                minlength="5"
+                maxlength="100"
+                aria-describedby="titleError"
+                >
+                <div id="titleError" class="invalid-feedback"></div>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="title" class="form-label"> Incident Title</label>
+                <select
+                id ="category"
+                name="category"
+                class="form-select"
+                required
+                aria-describedby="categoryError"
+                >
+                <option value="Unauthorized Access"> Unauhtorized Access </option> 
+                <option value="Phishing"> Phishing</option> 
+                <option value="Malware"> Malware </option> 
+                <option value="Data Exposure"> Data Exposure </option>
+                <option value="Other"> Other </option>
+                </select>
+                <div id="categoryError" class="invalid-feedback"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label"> Description </label>
+                <textarea
+                    id ="description"
+                    name="description"
+                    class="form-control"
+                    rows="5"
+                    placeholder="Explain what happened and what you observed"
+                    required
+                    minlength="10"
+                    maxlength="2000"
+                    aria-describedby="descriptionError">
+                </textarea>
+                <div id="descriptionError" class="invalid-feedback"></div>
+            </div>
+                        
+            <div class="mb-3">
+                <label for="severity" class="form-label">Severity</label>
+                <select
+                id ="severity"
+                name="severity"
+                class="form-select"
+                required
+                placeholder="Select an option"
+                aria-describedby="categoryError"
+                >
+                <option value="Low"> Low </option> 
+                <option value="Medium"> Medium</option> 
+                <option value="High"> High </option> 
+                </select>
+                <div id="severityError" class="invalid-feedback"></div>
+            </div>
+
+            <p class="text-muted">
+                New reports will have a status of <strong>OPEN</strong>.
+            </p>
+
+            <buttom type="submit" class="btn btn-primary">
+                Validate Report
+            </buttom>
+
+            <p id="formMessage" class="mt-3 mb-0"></p>
+
+        </form>
+    </div>
+</main>
+<script src="/routes/incident.js" defer></script>
 <%- include partials/footer.ejs %>
