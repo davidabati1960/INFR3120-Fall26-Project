@@ -12,4 +12,4 @@ async function connectDatabase() {
     });
     console.log('Connected to MongoDB Atlas; cybertrack');
 }
-module.export = connectDatabase;
+module.exports = connectDatabase;

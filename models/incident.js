@@ -27,7 +27,7 @@ const incidentSchema = new mongoose.Schema(
             minlength: [10, 'Description must contain at least 10 characters.'],
             maxlength: [2000, 'Description cannot exceed 2000 characters.']
         },
-        category: {
+        severity: {
             type: String,
             required: [true, 'Severity is required.'],
             enum: {

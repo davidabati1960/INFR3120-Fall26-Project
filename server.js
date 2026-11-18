@@ -5,6 +5,7 @@
  */
 
 var app = require('./config/app');
+const connectDatabase=require("./config/database");
 var debug = require('debug')('infr3120-fall26-project:server');
 var http = require('http');
 
@@ -25,10 +26,20 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
+async function startServer() {
+  try {
+    await connectDatabase();
+    server.listen(port);
+
+  } catch(error){
+       console.error('Database startup failed:', error.message);
+       process.exit(1);
+  }
+}
+startServer
 /**
  * Normalize a port into a number, string, or false.
  */

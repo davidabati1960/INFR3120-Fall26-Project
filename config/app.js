@@ -6,13 +6,16 @@ let logger = require('morgan');
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
+let createIncidentRouter = require('../routes/createIncident');
+
+
 
 let app = express();
 
 require('dotenv').config({
   path: path.join(__dirname,'.env')
 });
-
+//connection block
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGODB_URL,{
@@ -39,6 +42,7 @@ app.use(express.static(path.join(__dirname, '..','node_modules')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.useI('/api/incidents', createIncidentRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
