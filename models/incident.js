@@ -46,3 +46,4 @@ const incidentSchema = new mongoose.Schema(
         }
 );
 module.exports=mongoose.model('Incident', incidentSchema);
+<script src="/scripts/incident.js" defer></script>

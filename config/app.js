@@ -15,19 +15,7 @@ let app = express();
 require('dotenv').config({
   path: path.join(__dirname,'.env')
 });
-//connection block
-const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URL,{
-  dbName: 'cybertrack'
-})
-.then(()=> {
-  console.log('Connected to MongoDB Atlas');
-})
-.catch((error) => {
-  console.error('MongoDB connection failed:', error.message);
-  process.exit(1);
-})
 
 // view engine setup
 app.set('views', path.join(__dirname, '..', 'views'));
@@ -42,7 +30,7 @@ app.use(express.static(path.join(__dirname, '..','node_modules')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.useI('/api/incidents', createIncidentRouter);
+app.use('/api/incidents', createIncidentRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

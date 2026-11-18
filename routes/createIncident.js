@@ -32,7 +32,7 @@ router.post('/', async(req, res) => {
         return res.status(201).json({
             message: 'Incident saved successfully',
             incident: newIncident
-        }):
+        });
     } catch (error){
         //if mongoose rejects one or more fields
         if (error.name === 'ValidationError') {
@@ -50,4 +50,6 @@ router.post('/', async(req, res) => {
             message: 'Unable to save the incident right now.'
         });
     }
+
 });
+module.exports = router;

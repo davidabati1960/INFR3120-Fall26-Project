@@ -39,7 +39,7 @@ async function startServer() {
        process.exit(1);
   }
 }
-startServer
+startServer();
 /**
  * Normalize a port into a number, string, or false.
  */
