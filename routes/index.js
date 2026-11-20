@@ -14,4 +14,9 @@ router.get('/incident', function(req, res, next) {
   res.render('incident', { title: 'Report Incident' });
 });
 
+/* GET incident dashboard. */
+router.get('/dashboard', function(req, res, next) {
+  res.render('dashboard', { title: 'Incident Dashboard' });
+});
+
 module.exports = router;
