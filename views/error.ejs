@@ -1,6 +1,23 @@
 <%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+
+<main class="container text-center py-5">
+
+    <div class="py-5">
+        <h1 class="display-1 fw-bold">404</h1>
+
+        <h2>Page Not Found</h2>
+
+        <p class="lead text-muted mt-3">
+            Sorry, the page you're looking for doesn't exist.
+        </p>
+
+        <a href="/home" class="btn btn-dark btn-lg mt-3">
+            <i class="fa-solid fa-house"></i>
+            Back Home
+        </a>
+    </div>
+
+</main>
+
 <%- include partials/footer.ejs %>

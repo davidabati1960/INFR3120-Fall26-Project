@@ -19,4 +19,11 @@ router.get('/dashboard', function(req, res, next) {
   res.render('dashboard', { title: 'Incident Dashboard' });
 });
 
+/* GET 404 page. */
+router.use(function(req, res) {
+  res.status(404).render('error', { title: 'Page Not Found' });
+});
+
 module.exports = router;
+
+
