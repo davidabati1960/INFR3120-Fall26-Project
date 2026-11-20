@@ -1,7 +1,7 @@
 
 # CyberTrack — Cybersecurity Incident Tracking System
 Github link:https://github.com/davidabati1960/INFR3120-Fall26-Project
-MONGODB_URL="mongodb+srv://ramdevvimal_db_user:Ki3YBwYr9s3X4D9S@cybertrackcluster.8nzusxb.mongodb.net/"
+
 
 
 CyberTrack is a full-stack web application designed to report, track, and manage cybersecurity incidents. Users can log new incidents with severity levels and categories, and monitor open reports through a centralized dashboard.
